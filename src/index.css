@@ -1,13 +1,236 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0
+}
+body{
+  font-family: 'Lato', 'sans-serif';
+}
+a, button{
+  text-decoration: none;
+  transition: 0.3s;
+}
+a:hover, button:hover{
+  transition: 0.3s;
+  cursor: pointer;
+}
+input:focus, button:focus{
+  outline: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1, h2, h3, h4{
+  font-weight: normal;
+}
+
+.p-1{padding: 7px}
+.p-2{padding: 20px}
+.p-3{padding: 30px}
+.pt-1{padding-top: 10px;}
+.pt-2{padding-top: 20px;}
+.pb-1{padding-bottom: 10px;}
+.pb-2{padding-bottom: 20px;}
+
+.t-center{text-align: center;}
+
+.white{color:white}
+.f-normal{font-weight: normal;}
+.text-alt{color: #00DFC4}
+
+/* side panel component styles */
+
+.side-panel, .side-panel-search{
+  min-height: 100vh;
+  position: fixed;
+  width: 35%;
+}
+
+.dark-bg{background-color: #27384C;}
+
+/* main component styles */
+
+.main-data{
+  margin: auto;
+  color: white;
+  border-radius: 20px;
+  background-color: #304257;
+  width: fit-content
+}
+
+/* search component styles */
+.go-back{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.go-back button{
+  color: #00DFC4;
+  background: transparent;
+  margin-right: 5px;
+  border: none
+}
+.go-back button:hover{
+  color:white
+}
+.search-form{
+  width: 85%;
+  display: flex;
+  margin: 10px auto;
+  position: relative;
+}
+.search-form input{
+  width: 100%;
+  background-color: #304257;
+  padding: 10px;
+  color: white;
+  border-radius: 15px;
+  border: none
+}
+.search-form button{
+  padding: 5px;
+  background: transparent;
+  color: white;
+  border: none;
+  right: 0px;
+  position: absolute
+}
+.search-form button:hover{
+  color: #00DFC4
+}
+
+/* countries component styles */
+
+.second-container{
+  color: white;
+  background-color: #27384C;
+  width: 65%;
+  min-height: 100vh;
+  float: right
+}
+.country-details{
+  width: 230px;
+  margin: 10px;
+  background-color: #304257;
+  border-radius: 15px;
+  float: left
+}
+.country-details p{
+  font-size: smaller;
+  padding-bottom: 5px;
+}
+.footer{display:none}
+.footer p, .side-footer p{
+  text-align: center;
+}
+
+@media (min-width:320px) and (max-width:480px){
+  h2{font-size: large;}
+  .p-1{padding:5px}
+  .p-3{padding:20px}
+  /* side panel styles */
+  .side-panel-search{
+    display: none
+  }
+
+  .side-panel{
+    min-height: auto;
+    height: fit-content;
+    position: relative;
+    width: 100%;
+  }
+  .side-footer{
+    display: none;
+  }
+  .main-data{
+    height: 200px;
+    overflow-y: scroll;
+  }
+  .main-data p{
+    font-size: smaller;
+  }
+  /* countries component styles */
+  .second-container{
+    width: 100%;
+    float: none
+  }
+
+  .country-details{
+    width: 100%;
+    padding:10px;
+    float: none;
+    margin: 10px auto;
+  }
+
+  .footer{display: block;}
+
+  /* search component styles */
+  .search-form{
+    width: 100%;
+  }
+}
+@media (min-width:481px) and (max-width:768px){
+  .p-3{padding:20px}
+
+  /* side panel component styles */
+
+  .side-panel, .side-panel-search{
+    width: 38%;
+    padding-right: 0px;
+  }
+  .main-data{padding: 5px}
+  .main-data h2{
+    font-size: medium;
+    padding: 5px;
+  }
+  .main-data h4{
+    font-size: smaller;
+    padding:5px
+  }
+
+  /* countries component styles */
+
+  .second-container{
+    width: 62%;
+  }
+  .country-details{
+    width: 100%;
+    padding:10px;
+    float: none;
+    margin: 10px auto;
+  }
+}
+@media (min-width:769px) and (max-width:1024px){
+  .side-panel, .side-panel-search{
+    padding-right: 0px;
+  }
+  /* side panel component styles */
+
+  /* .side-panel, .side-panel-search{
+    width: 38%;
+    padding-right: 0px;
+  } */
+  /* .main-data{padding: 5px} */
+  .main-data h2{
+    padding: 5px;
+  }
+  .main-data h4{
+    padding:5px
+  }
+}
+
+@media (min-height:170px) and (max-height:320px){
+  .side-panel h2{
+    font-size: small;
+  }
+  .main-data{
+    height: 150px;
+    overflow-y: scroll;
+  }
+  .side-footer{display: none;}
+}
+@media (min-height:321px) and (max-height:481px){
+  .main-data{
+    height: 220px;
+    overflow-y: scroll;
+  }
+  .side-footer{display: none;}
 }
